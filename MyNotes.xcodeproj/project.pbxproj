@@ -11,6 +11,7 @@
 		AB406A412A8CD1F100DD5F95 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB406A402A8CD1F100DD5F95 /* CustomTextField.swift */; };
 		AB406A432A8CDEA900DD5F95 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB406A422A8CDEA900DD5F95 /* LoginViewModel.swift */; };
 		AB406A452A8CEA6C00DD5F95 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */; };
+		AB48C3892A9E11420055C1C4 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */; };
 		ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB24EA82A8B8C170029BA59 /* AppDelegate.swift */; };
 		ABB24EAD2A8B8C170029BA59 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB24EAC2A8B8C170029BA59 /* LoginViewController.swift */; };
 		ABB24EB22A8B8C170029BA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB24EB12A8B8C170029BA59 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		AB406A402A8CD1F100DD5F95 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		AB406A422A8CDEA900DD5F95 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		ABB24EA52A8B8C170029BA59 /* MyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB24EA82A8B8C170029BA59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABB24EAC2A8B8C170029BA59 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AB48C3872A9E10F70055C1C4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		ABB24E9C2A8B8C170029BA59 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		ABB24EA72A8B8C170029BA59 /* MyNotes */ = {
 			isa = PBXGroup;
 			children = (
+				AB48C3872A9E10F70055C1C4 /* Service */,
 				AB406A3D2A8CCE7000DD5F95 /* Model */,
 				AB406A3C2A8CCE6600DD5F95 /* ViewModel */,
 				AB406A3B2A8CCE5A00DD5F95 /* View */,
@@ -218,6 +229,7 @@
 				ABB24EC12A8B906E0029BA59 /* Extension.swift in Sources */,
 				ABB24EAD2A8B8C170029BA59 /* LoginViewController.swift in Sources */,
 				AB406A452A8CEA6C00DD5F95 /* RegisterViewController.swift in Sources */,
+				AB48C3892A9E11420055C1C4 /* AuthenticationService.swift in Sources */,
 				ABC56A3F2A8E266700D8CC98 /* RegisterViewModel.swift in Sources */,
 				AB406A432A8CDEA900DD5F95 /* LoginViewModel.swift in Sources */,
 				ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */,

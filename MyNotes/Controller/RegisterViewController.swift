@@ -11,6 +11,7 @@ class RegisterViewController: UIViewController {
     
     // MARK: - Properties
     
+    private var profileImage: UIImage?
     private var viewModel = RegisterViewModel()
     
     private lazy var cameraButton: UIButton = {
@@ -64,7 +65,7 @@ class RegisterViewController: UIViewController {
         return textField
     }()
     
-    private let resgisterButton: UIButton = {
+    private lazy var resgisterButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign In", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
@@ -73,6 +74,7 @@ class RegisterViewController: UIViewController {
         button.layer.cornerRadius = 7
         button.isEnabled = false
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.addTarget(self, action: #selector(handleRegisterButton), for: .touchUpInside)
         return button
     }()
     
@@ -99,6 +101,22 @@ class RegisterViewController: UIViewController {
 
 // MARK: - Selector
 extension RegisterViewController{
+    
+    @objc private func handleRegisterButton(_ sender: UIButton) {
+        guard let emailText = emailTextField.text else {return}
+        guard let passwordText = passwordTextField.text else {return}
+        guard let nameText = nameTextField.text else {return}
+        guard let usernameText = usernameTextField.text else {return}
+        guard let profileImage = self.profileImage else {return}
+        
+        let user = AuthenticationRegisterUserModel(emailText: emailText, passwordText: passwordText, usernameText: usernameText, nameText: nameText, profileImage: profileImage)
+        AuthenticationService.createUser(user: user) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+        }
+    }
     
     @objc private func handlePhoto(_ sender: UIButton){
         let picker = UIImagePickerController()
@@ -184,6 +202,8 @@ extension RegisterViewController{
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as! UIImage
+        self.profileImage = image
+        
         cameraButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
         cameraButton.clipsToBounds = true
         cameraButton.layer.cornerRadius = 150 / 2
