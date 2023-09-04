@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
@@ -53,6 +53,7 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 7 //ovalleşmesini sağlar butonun
         button.isEnabled = false // ilk başta butonu inaktif yapmasını sağlar
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true // equalToConstant : constant değerini ayarlarız
+        button.addTarget(self, action: #selector(handleLoginButton), for: .touchUpInside)
         return button
     }()
     
@@ -82,6 +83,22 @@ class LoginViewController: UIViewController {
 // MARK: - Selector
 
 extension LoginViewController{
+    
+    @objc private func handleLoginButton(_ sender: UIButton){
+        guard let emailText = emailTextField.text else{ return }
+        guard let passwordText = passwordTextField.text else{ return }
+        showHud(show: true)
+        AuthenticationService.login(emailText: emailText, passwordText: passwordText) { result, error in
+            if let error = error{
+                print("Error: \(error.localizedDescription)")
+                self.showHud(show: false)
+                return
+            }
+            self.showHud(show: false)
+            self.dismiss(animated: true)
+        }
+    }
+    
     
     @objc private func handleGoRegister(_ sender: UIButton){
         let controller = RegisterViewController()

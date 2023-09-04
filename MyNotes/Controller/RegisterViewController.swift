@@ -108,13 +108,17 @@ extension RegisterViewController{
         guard let nameText = nameTextField.text else {return}
         guard let usernameText = usernameTextField.text else {return}
         guard let profileImage = self.profileImage else {return}
+        showHud(show: true)
         
         let user = AuthenticationRegisterUserModel(emailText: emailText, passwordText: passwordText, usernameText: usernameText, nameText: nameText, profileImage: profileImage)
         AuthenticationService.createUser(user: user) { error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
+                self.showHud(show: false)
                 return
             }
+            self.showHud(show: false)
+            self.dismiss(animated: true)
         }
     }
     
@@ -142,6 +146,14 @@ extension RegisterViewController{
         }
         registerButtonStatus()
     }
+    
+    @objc private func handleKeyboardWillShow(){
+        self.view.frame.origin.y = -110
+    }
+    
+    @objc private func handleKeyboardWillHide(){
+        self.view.frame.origin.y = 0
+    }
 }
 
 
@@ -159,6 +171,8 @@ extension RegisterViewController{
     }
     
     private func style(){
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         backgroundGradientColor()
         self.navigationController?.navigationBar.isHidden = true
         cameraButton.translatesAutoresizingMaskIntoConstraints = false

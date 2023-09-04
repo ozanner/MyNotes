@@ -12,6 +12,8 @@
 		AB406A432A8CDEA900DD5F95 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB406A422A8CDEA900DD5F95 /* LoginViewModel.swift */; };
 		AB406A452A8CEA6C00DD5F95 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */; };
 		AB48C3892A9E11420055C1C4 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */; };
+		AB7BDFCD2AA5E9A300CCA0CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7BDFCC2AA5E9A300CCA0CC /* MainViewController.swift */; };
+		AB7BDFD02AA60CDE00CCA0CC /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = AB7BDFCF2AA60CDE00CCA0CC /* JGProgressHUD */; };
 		ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB24EA82A8B8C170029BA59 /* AppDelegate.swift */; };
 		ABB24EAD2A8B8C170029BA59 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB24EAC2A8B8C170029BA59 /* LoginViewController.swift */; };
 		ABB24EB22A8B8C170029BA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB24EB12A8B8C170029BA59 /* Assets.xcassets */; };
@@ -30,6 +32,7 @@
 		AB406A422A8CDEA900DD5F95 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		AB7BDFCC2AA5E9A300CCA0CC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ABB24EA52A8B8C170029BA59 /* MyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB24EA82A8B8C170029BA59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABB24EAC2A8B8C170029BA59 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7BDFD02AA60CDE00CCA0CC /* JGProgressHUD in Frameworks */,
 				ABC56A442A8E31D100D8CC98 /* FirebaseAuth in Frameworks */,
 				ABC56A462A8E31D100D8CC98 /* FirebaseFirestore in Frameworks */,
 				ABC56A482A8E31D100D8CC98 /* FirebaseStorage in Frameworks */,
@@ -123,6 +127,7 @@
 			children = (
 				ABB24EAC2A8B8C170029BA59 /* LoginViewController.swift */,
 				AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */,
+				AB7BDFCC2AA5E9A300CCA0CC /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				ABC56A432A8E31D100D8CC98 /* FirebaseAuth */,
 				ABC56A452A8E31D100D8CC98 /* FirebaseFirestore */,
 				ABC56A472A8E31D100D8CC98 /* FirebaseStorage */,
+				AB7BDFCF2AA60CDE00CCA0CC /* JGProgressHUD */,
 			);
 			productName = MyNotes;
 			productReference = ABB24EA52A8B8C170029BA59 /* MyNotes.app */;
@@ -198,6 +204,7 @@
 			mainGroup = ABB24E9C2A8B8C170029BA59;
 			packageReferences = (
 				ABC56A422A8E31D100D8CC98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AB7BDFCE2AA60CDE00CCA0CC /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = ABB24EA62A8B8C170029BA59 /* Products */;
 			projectDirPath = "";
@@ -235,6 +242,7 @@
 				ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */,
 				AB406A3F2A8CCEC900DD5F95 /* AuthenticationInputView.swift in Sources */,
 				AB406A412A8CD1F100DD5F95 /* CustomTextField.swift in Sources */,
+				AB7BDFCD2AA5E9A300CCA0CC /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +452,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AB7BDFCE2AA60CDE00CCA0CC /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		ABC56A422A8E31D100D8CC98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -455,6 +471,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AB7BDFCF2AA60CDE00CCA0CC /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB7BDFCE2AA60CDE00CCA0CC /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		ABC56A432A8E31D100D8CC98 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ABC56A422A8E31D100D8CC98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
