@@ -12,10 +12,11 @@ import FirebaseCore
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow()
-        window?.rootViewController = UINavigationController(rootViewController: MainViewController())
-        window?.makeKeyAndVisible()
         FirebaseApp.configure()
+        window = UIWindow()
+        window?.rootViewController =  MainTabBarViewController()
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

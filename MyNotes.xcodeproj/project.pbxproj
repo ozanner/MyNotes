@@ -12,7 +12,7 @@
 		AB406A432A8CDEA900DD5F95 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB406A422A8CDEA900DD5F95 /* LoginViewModel.swift */; };
 		AB406A452A8CEA6C00DD5F95 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */; };
 		AB48C3892A9E11420055C1C4 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */; };
-		AB7BDFCD2AA5E9A300CCA0CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7BDFCC2AA5E9A300CCA0CC /* MainViewController.swift */; };
+		AB7BDFCD2AA5E9A300CCA0CC /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7BDFCC2AA5E9A300CCA0CC /* MainTabBarViewController.swift */; };
 		AB7BDFD02AA60CDE00CCA0CC /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = AB7BDFCF2AA60CDE00CCA0CC /* JGProgressHUD */; };
 		ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB24EA82A8B8C170029BA59 /* AppDelegate.swift */; };
 		ABB24EAD2A8B8C170029BA59 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB24EAC2A8B8C170029BA59 /* LoginViewController.swift */; };
@@ -24,6 +24,9 @@
 		ABC56A442A8E31D100D8CC98 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ABC56A432A8E31D100D8CC98 /* FirebaseAuth */; };
 		ABC56A462A8E31D100D8CC98 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ABC56A452A8E31D100D8CC98 /* FirebaseFirestore */; };
 		ABC56A482A8E31D100D8CC98 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ABC56A472A8E31D100D8CC98 /* FirebaseStorage */; };
+		ABE744672AA72B77008D3AF6 /* PastTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */; };
+		ABE744692AA72C53008D3AF6 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE744682AA72C53008D3AF6 /* TasksViewController.swift */; };
+		ABE7446B2AA72C93008D3AF6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +35,7 @@
 		AB406A422A8CDEA900DD5F95 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
-		AB7BDFCC2AA5E9A300CCA0CC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AB7BDFCC2AA5E9A300CCA0CC /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		ABB24EA52A8B8C170029BA59 /* MyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB24EA82A8B8C170029BA59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABB24EAC2A8B8C170029BA59 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +45,9 @@
 		ABB24EC02A8B906E0029BA59 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		ABC56A3E2A8E266700D8CC98 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		ABC56A402A8E30C200D8CC98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTaskViewController.swift; sourceTree = "<group>"; };
+		ABE744682AA72C53008D3AF6 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +133,10 @@
 			children = (
 				ABB24EAC2A8B8C170029BA59 /* LoginViewController.swift */,
 				AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */,
-				AB7BDFCC2AA5E9A300CCA0CC /* MainViewController.swift */,
+				AB7BDFCC2AA5E9A300CCA0CC /* MainTabBarViewController.swift */,
+				ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */,
+				ABE744682AA72C53008D3AF6 /* TasksViewController.swift */,
+				ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,11 +247,14 @@
 				AB406A452A8CEA6C00DD5F95 /* RegisterViewController.swift in Sources */,
 				AB48C3892A9E11420055C1C4 /* AuthenticationService.swift in Sources */,
 				ABC56A3F2A8E266700D8CC98 /* RegisterViewModel.swift in Sources */,
+				ABE744692AA72C53008D3AF6 /* TasksViewController.swift in Sources */,
 				AB406A432A8CDEA900DD5F95 /* LoginViewModel.swift in Sources */,
 				ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */,
 				AB406A3F2A8CCEC900DD5F95 /* AuthenticationInputView.swift in Sources */,
+				ABE744672AA72B77008D3AF6 /* PastTaskViewController.swift in Sources */,
+				ABE7446B2AA72C93008D3AF6 /* ProfileViewController.swift in Sources */,
 				AB406A412A8CD1F100DD5F95 /* CustomTextField.swift in Sources */,
-				AB7BDFCD2AA5E9A300CCA0CC /* MainViewController.swift in Sources */,
+				AB7BDFCD2AA5E9A300CCA0CC /* MainTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
