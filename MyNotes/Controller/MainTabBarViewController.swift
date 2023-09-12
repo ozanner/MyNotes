@@ -79,6 +79,7 @@ extension MainTabBarViewController{
         self.tabBar.tintColor = UIColor.systemBlue.withAlphaComponent(0.8) // seçilen tab item ın rengi
         self.tabBar.unselectedItemTintColor = UIColor.lightGray// seçilmeyenlerin rengi
         self.tabBar.layer.insertSublayer(shape, at: 0)
+        selectedIndex = 1 // bu yapıldığında ortadaki sayfa açılıcak ilk olarak.
     }
     
 }

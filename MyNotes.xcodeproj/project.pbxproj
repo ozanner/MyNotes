@@ -24,6 +24,8 @@
 		ABC56A442A8E31D100D8CC98 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ABC56A432A8E31D100D8CC98 /* FirebaseAuth */; };
 		ABC56A462A8E31D100D8CC98 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ABC56A452A8E31D100D8CC98 /* FirebaseFirestore */; };
 		ABC56A482A8E31D100D8CC98 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ABC56A472A8E31D100D8CC98 /* FirebaseStorage */; };
+		ABCC24802AB0721D0099D86F /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC247F2AB0721D0099D86F /* NewTaskViewController.swift */; };
+		ABCC24822AB076C10099D86F /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC24812AB076C10099D86F /* InputTextView.swift */; };
 		ABE744672AA72B77008D3AF6 /* PastTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */; };
 		ABE744692AA72C53008D3AF6 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE744682AA72C53008D3AF6 /* TasksViewController.swift */; };
 		ABE7446B2AA72C93008D3AF6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */; };
@@ -45,6 +47,8 @@
 		ABB24EC02A8B906E0029BA59 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		ABC56A3E2A8E266700D8CC98 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		ABC56A402A8E30C200D8CC98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABCC247F2AB0721D0099D86F /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		ABCC24812AB076C10099D86F /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTaskViewController.swift; sourceTree = "<group>"; };
 		ABE744682AA72C53008D3AF6 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */,
 				ABE744682AA72C53008D3AF6 /* TasksViewController.swift */,
 				ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */,
+				ABCC247F2AB0721D0099D86F /* NewTaskViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				ABB24EC02A8B906E0029BA59 /* Extension.swift */,
+				ABCC24812AB076C10099D86F /* InputTextView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -248,8 +254,10 @@
 				AB48C3892A9E11420055C1C4 /* AuthenticationService.swift in Sources */,
 				ABC56A3F2A8E266700D8CC98 /* RegisterViewModel.swift in Sources */,
 				ABE744692AA72C53008D3AF6 /* TasksViewController.swift in Sources */,
+				ABCC24822AB076C10099D86F /* InputTextView.swift in Sources */,
 				AB406A432A8CDEA900DD5F95 /* LoginViewModel.swift in Sources */,
 				ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */,
+				ABCC24802AB0721D0099D86F /* NewTaskViewController.swift in Sources */,
 				AB406A3F2A8CCEC900DD5F95 /* AuthenticationInputView.swift in Sources */,
 				ABE744672AA72B77008D3AF6 /* PastTaskViewController.swift in Sources */,
 				ABE7446B2AA72C93008D3AF6 /* ProfileViewController.swift in Sources */,
