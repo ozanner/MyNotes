@@ -12,6 +12,7 @@
 		AB406A432A8CDEA900DD5F95 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB406A422A8CDEA900DD5F95 /* LoginViewModel.swift */; };
 		AB406A452A8CEA6C00DD5F95 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */; };
 		AB48C3892A9E11420055C1C4 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */; };
+		AB55EFCB2AB2085C006677F7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55EFCA2AB2085C006677F7 /* Service.swift */; };
 		AB7BDFCD2AA5E9A300CCA0CC /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7BDFCC2AA5E9A300CCA0CC /* MainTabBarViewController.swift */; };
 		AB7BDFD02AA60CDE00CCA0CC /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = AB7BDFCF2AA60CDE00CCA0CC /* JGProgressHUD */; };
 		ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB24EA82A8B8C170029BA59 /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 		AB406A422A8CDEA900DD5F95 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		AB55EFCA2AB2085C006677F7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		AB7BDFCC2AA5E9A300CCA0CC /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		ABB24EA52A8B8C170029BA59 /* MyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB24EA82A8B8C170029BA59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */,
+				AB55EFCA2AB2085C006677F7 /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				ABCC24822AB076C10099D86F /* InputTextView.swift in Sources */,
 				AB406A432A8CDEA900DD5F95 /* LoginViewModel.swift in Sources */,
 				ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */,
+				AB55EFCB2AB2085C006677F7 /* Service.swift in Sources */,
 				ABCC24802AB0721D0099D86F /* NewTaskViewController.swift in Sources */,
 				AB406A3F2A8CCEC900DD5F95 /* AuthenticationInputView.swift in Sources */,
 				ABE744672AA72B77008D3AF6 /* PastTaskViewController.swift in Sources */,

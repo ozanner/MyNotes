@@ -42,9 +42,12 @@ extension MainTabBarViewController{
     private func userStatus() {
         if Auth.auth().currentUser?.uid == nil {
             //print("Kullanıcı yok")
-            let controller = UINavigationController(rootViewController: LoginViewController())
-            controller.modalPresentationStyle = .fullScreen
-            self.present(controller, animated: true)
+            DispatchQueue.main.async {
+                let controller = UINavigationController(rootViewController: LoginViewController())
+                controller.modalPresentationStyle = .fullScreen
+                self.present(controller, animated: true)
+            }
+        
             
         }else {
             print("Kullanıcı var")
