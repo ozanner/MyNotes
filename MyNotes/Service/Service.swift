@@ -25,6 +25,20 @@ struct Service {
         
     }
 
-    
+   // User bilgilerini db den getirme
+    static func fetchUser(uid: String, completion: @escaping(User) -> Void){
+        
+        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
+            guard let data = snapshot?.data() else { return }
+            let user = User(data: data)
+            completion(user)
+        }
+        
+        
+        
+        
+        
+        
+    }
     
 }
