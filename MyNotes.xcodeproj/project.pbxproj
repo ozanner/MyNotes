@@ -20,6 +20,8 @@
 		ABB24EB22A8B8C170029BA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB24EB12A8B8C170029BA59 /* Assets.xcassets */; };
 		ABB24EB52A8B8C180029BA59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB24EB32A8B8C180029BA59 /* LaunchScreen.storyboard */; };
 		ABB24EC12A8B906E0029BA59 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB24EC02A8B906E0029BA59 /* Extension.swift */; };
+		ABC42ED32AB9964900A9E080 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC42ED22AB9964900A9E080 /* Task.swift */; };
+		ABC42ED52AB9983200A9E080 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC42ED42AB9983200A9E080 /* Constant.swift */; };
 		ABC56A3F2A8E266700D8CC98 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC56A3E2A8E266700D8CC98 /* RegisterViewModel.swift */; };
 		ABC56A412A8E30C200D8CC98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABC56A402A8E30C200D8CC98 /* GoogleService-Info.plist */; };
 		ABC56A442A8E31D100D8CC98 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ABC56A432A8E31D100D8CC98 /* FirebaseAuth */; };
@@ -30,7 +32,7 @@
 		ABE744672AA72B77008D3AF6 /* PastTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */; };
 		ABE744692AA72C53008D3AF6 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE744682AA72C53008D3AF6 /* TasksViewController.swift */; };
 		ABE7446B2AA72C93008D3AF6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */; };
-		ABF9598C2AB84BC400AAC2B6 /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9598B2AB84BC400AAC2B6 /* TasksCell.swift */; };
+		ABF9598C2AB84BC400AAC2B6 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9598B2AB84BC400AAC2B6 /* TaskCell.swift */; };
 		ABF9598E2AB8633000AAC2B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9598D2AB8633000AAC2B6 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		ABB24EB42A8B8C180029BA59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABB24EB62A8B8C180029BA59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABB24EC02A8B906E0029BA59 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		ABC42ED22AB9964900A9E080 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		ABC42ED42AB9983200A9E080 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		ABC56A3E2A8E266700D8CC98 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		ABC56A402A8E30C200D8CC98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABCC247F2AB0721D0099D86F /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +60,7 @@
 		ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTaskViewController.swift; sourceTree = "<group>"; };
 		ABE744682AA72C53008D3AF6 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		ABF9598B2AB84BC400AAC2B6 /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
+		ABF9598B2AB84BC400AAC2B6 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		ABF9598D2AB8633000AAC2B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +84,7 @@
 			children = (
 				AB406A3E2A8CCEC900DD5F95 /* AuthenticationInputView.swift */,
 				AB406A402A8CD1F100DD5F95 /* CustomTextField.swift */,
-				ABF9598B2AB84BC400AAC2B6 /* TasksCell.swift */,
+				ABF9598B2AB84BC400AAC2B6 /* TaskCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF9598D2AB8633000AAC2B6 /* User.swift */,
+				ABC42ED22AB9964900A9E080 /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			children = (
 				ABB24EC02A8B906E0029BA59 /* Extension.swift */,
 				ABCC24812AB076C10099D86F /* InputTextView.swift */,
+				ABC42ED42AB9983200A9E080 /* Constant.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -264,9 +270,11 @@
 				ABC56A3F2A8E266700D8CC98 /* RegisterViewModel.swift in Sources */,
 				ABE744692AA72C53008D3AF6 /* TasksViewController.swift in Sources */,
 				ABCC24822AB076C10099D86F /* InputTextView.swift in Sources */,
+				ABC42ED52AB9983200A9E080 /* Constant.swift in Sources */,
+				ABC42ED32AB9964900A9E080 /* Task.swift in Sources */,
 				AB406A432A8CDEA900DD5F95 /* LoginViewModel.swift in Sources */,
 				ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */,
-				ABF9598C2AB84BC400AAC2B6 /* TasksCell.swift in Sources */,
+				ABF9598C2AB84BC400AAC2B6 /* TaskCell.swift in Sources */,
 				AB55EFCB2AB2085C006677F7 /* Service.swift in Sources */,
 				ABCC24802AB0721D0099D86F /* NewTaskViewController.swift in Sources */,
 				AB406A3F2A8CCEC900DD5F95 /* AuthenticationInputView.swift in Sources */,

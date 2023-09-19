@@ -6,10 +6,20 @@
 //
 
 import UIKit
+protocol TaskCellProtocol: AnyObject {
+    func deleteTask(sender: TaskCell, index: Int) // hangi hücreyi silmemizi söylicek bir index gönderecek
+    
+}
 
-class TasksCell: UICollectionViewCell {
+class TaskCell: UICollectionViewCell {
     
     // MARK: - Properties
+    var index: Int?
+    var task: Task? {
+        didSet{ configure() }
+    }
+    
+    weak var delegete: TaskCellProtocol?
     
     //listview daki listelerin circle olan butonu oluşturduk
     private lazy var circleButton: UIButton = {
@@ -24,7 +34,8 @@ class TasksCell: UICollectionViewCell {
     private let taskLabel: UILabel = {
        let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .title3)
-        label.text = "Deneme 1"
+        //label.text = "Deneme 1"
+        label.numberOfLines = 0
         return label
     }()
     
@@ -41,16 +52,23 @@ class TasksCell: UICollectionViewCell {
 }
 
 // MARK: - Selector
-extension TasksCell{
+extension TaskCell{
     //listedeki circle butonların tıklandığındaki animasyon fonksiyonu
     @objc private func handleCircleButton(_ sender: UIButton){
         UIView.animate(withDuration: 0.5,delay: 0) {
             self.circleButton.alpha = 0
         } completion: { _ in
-            UIView.animate(withDuration: 0.5,delay: 0) {
+            UIView.animate(withDuration: 0.5, delay: 0) {
                 self.circleButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
                 self.circleButton.alpha = 1
+            } completion: { _ in
+                // tamamlandıktan sonraki gerçekleşek olan işlem
+                guard let task = self.task else { return }
+                guard let index = self.index else { return }
+                Service.deleteTask(task: task)
+                self.delegete?.deleteTask(sender: self, index: index)
             }
+
         }
 
     }
@@ -60,7 +78,7 @@ extension TasksCell{
 
 // MARK: - Helpers
 
-extension TasksCell {
+extension TaskCell {
     private func style() {
         backgroundColor = .white
         layer.cornerRadius = 5
@@ -86,4 +104,9 @@ extension TasksCell {
             bottomAnchor.constraint(equalTo: taskLabel.bottomAnchor, constant: 8)
         ])
     }
+    private func configure() {
+        guard let task = self.task else { return }
+        taskLabel.text = task.text
+    }
+    
 }

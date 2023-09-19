@@ -11,9 +11,10 @@ private let reuseIdentifier = "Tasks"
 
 class TasksViewController: UIViewController {
     // MARK: - Properties
-    private var user: User? {
+     var user: User? {
         didSet{ configure() }
     }
+    private var tasks = [Task]()
     
     private lazy var newTaskButton: UIButton = {
         let button = UIButton(type: .system)
@@ -34,6 +35,7 @@ class TasksViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         label.textColor = .white
+        label.text = " "
         return label
     }()
     
@@ -42,19 +44,24 @@ class TasksViewController: UIViewController {
         super.viewDidLoad()
         style()
         layout()
-        fetchUser()
+        //fetchUser()
+        //fetchTasks()
     }
 }
 
 // MARK: - Service
 extension TasksViewController{
-    // user bilgilerini getirip önyüzde göstermeyi sağlayan fonksiyon
-    private func fetchUser(){
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        Service.fetchUser(uid: uid) { user in
-            self.user = user
+    
+    //tasklerin getirilip ön yüzde göstermeyi sağlayan fonksiyon
+    private func fetchTasks(){
+        guard let uid = self.user?.uid else { return }
+        Service.fetchTasks(uid: uid) { tasks in
+            self.tasks = tasks
+            self.collectionView.reloadData()
         }
     }
+    
+   
 }
 
 // MARK: - Selector
@@ -78,7 +85,7 @@ extension TasksViewController{
         self.navigationController?.navigationBar.isHidden = true // navigasyon barı gizledik
         newTaskButton.translatesAutoresizingMaskIntoConstraints = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(TasksCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(TaskCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
@@ -110,17 +117,21 @@ extension TasksViewController{
         guard let user = self.user else { return }
         nameLabel.text = "Hi \(user.name) 👋🏻"
         //print("user: \(user.name)")
+        fetchTasks()
     }
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension TasksViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return tasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TasksCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TaskCell
+        cell.task = tasks[indexPath.row]
+        cell.index = indexPath.row
+        cell.delegete = self
         return cell
     }
     
@@ -130,12 +141,25 @@ extension TasksViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 extension TasksViewController: UICollectionViewDelegateFlowLayout { // collectin view tasarımı nasık olucağını ayarlıyoruz
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width * 0.9, height: 50)
+        let cell = TaskCell(frame: .init(x: 0, y: 0, width: view.frame.width * 0.9, height: 50))
+        cell.task = tasks[indexPath.row]
+        cell.layoutIfNeeded()
+        let copySize = cell.systemLayoutSizeFitting(.init(width: view.frame.width * 0.9, height: 1000))
+        return .init(width: view.frame.width * 0.9, height: copySize.height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return .init(width: 10, height: 10)
     }
 }
 
+// MARK: - TaskCellProtocol
+extension TasksViewController: TaskCellProtocol {
+    func deleteTask(sender: TaskCell, index: Int) {
+        self.tasks.remove(at: index)
+        self.collectionView.reloadData()
+    }
+    
+    
+}
 
 

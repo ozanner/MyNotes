@@ -23,9 +23,21 @@ class MainTabBarViewController: UITabBarController {
         //signOut()
         userStatus()
         style()
+        fetchUser()
     }
     
   
+}
+
+// MARK: - Selector
+extension MainTabBarViewController{
+    // user bilgilerini getirip önyüzde göstermeyi sağlayan fonksiyon
+    private func fetchUser(){
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Service.fetchUser(uid: uid) { user in
+            self.tasksViewController.user = user
+        }
+    }
 }
 
 
