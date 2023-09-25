@@ -15,6 +15,7 @@
 		AB55EFCB2AB2085C006677F7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB55EFCA2AB2085C006677F7 /* Service.swift */; };
 		AB7BDFCD2AA5E9A300CCA0CC /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7BDFCC2AA5E9A300CCA0CC /* MainTabBarViewController.swift */; };
 		AB7BDFD02AA60CDE00CCA0CC /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = AB7BDFCF2AA60CDE00CCA0CC /* JGProgressHUD */; };
+		ABB1F4152AC1ABBB00A3446C /* PastTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1F4142AC1ABBB00A3446C /* PastTaskCell.swift */; };
 		ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB24EA82A8B8C170029BA59 /* AppDelegate.swift */; };
 		ABB24EAD2A8B8C170029BA59 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB24EAC2A8B8C170029BA59 /* LoginViewController.swift */; };
 		ABB24EB22A8B8C170029BA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB24EB12A8B8C170029BA59 /* Assets.xcassets */; };
@@ -30,10 +31,10 @@
 		ABCC24802AB0721D0099D86F /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC247F2AB0721D0099D86F /* NewTaskViewController.swift */; };
 		ABCC24822AB076C10099D86F /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC24812AB076C10099D86F /* InputTextView.swift */; };
 		ABE744672AA72B77008D3AF6 /* PastTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */; };
-		ABE744692AA72C53008D3AF6 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE744682AA72C53008D3AF6 /* TasksViewController.swift */; };
 		ABE7446B2AA72C93008D3AF6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */; };
 		ABF9598C2AB84BC400AAC2B6 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9598B2AB84BC400AAC2B6 /* TaskCell.swift */; };
 		ABF9598E2AB8633000AAC2B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9598D2AB8633000AAC2B6 /* User.swift */; };
+		ABFDB6F72AC1AD2C0049A539 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDB6F62AC1AD2C0049A539 /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		AB48C3882A9E11420055C1C4 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		AB55EFCA2AB2085C006677F7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		AB7BDFCC2AA5E9A300CCA0CC /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		ABB1F4142AC1ABBB00A3446C /* PastTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTaskCell.swift; sourceTree = "<group>"; };
 		ABB24EA52A8B8C170029BA59 /* MyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABB24EA82A8B8C170029BA59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABB24EAC2A8B8C170029BA59 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -58,10 +60,10 @@
 		ABCC247F2AB0721D0099D86F /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		ABCC24812AB076C10099D86F /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTaskViewController.swift; sourceTree = "<group>"; };
-		ABE744682AA72C53008D3AF6 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		ABF9598B2AB84BC400AAC2B6 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		ABF9598D2AB8633000AAC2B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ABFDB6F62AC1AD2C0049A539 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				AB406A3E2A8CCEC900DD5F95 /* AuthenticationInputView.swift */,
 				AB406A402A8CD1F100DD5F95 /* CustomTextField.swift */,
 				ABF9598B2AB84BC400AAC2B6 /* TaskCell.swift */,
+				ABB1F4142AC1ABBB00A3446C /* PastTaskCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -153,9 +156,9 @@
 				AB406A442A8CEA6C00DD5F95 /* RegisterViewController.swift */,
 				AB7BDFCC2AA5E9A300CCA0CC /* MainTabBarViewController.swift */,
 				ABE744662AA72B77008D3AF6 /* PastTaskViewController.swift */,
-				ABE744682AA72C53008D3AF6 /* TasksViewController.swift */,
 				ABE7446A2AA72C93008D3AF6 /* ProfileViewController.swift */,
 				ABCC247F2AB0721D0099D86F /* NewTaskViewController.swift */,
+				ABFDB6F62AC1AD2C0049A539 /* TaskViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,10 +271,10 @@
 				AB406A452A8CEA6C00DD5F95 /* RegisterViewController.swift in Sources */,
 				AB48C3892A9E11420055C1C4 /* AuthenticationService.swift in Sources */,
 				ABC56A3F2A8E266700D8CC98 /* RegisterViewModel.swift in Sources */,
-				ABE744692AA72C53008D3AF6 /* TasksViewController.swift in Sources */,
 				ABCC24822AB076C10099D86F /* InputTextView.swift in Sources */,
 				ABC42ED52AB9983200A9E080 /* Constant.swift in Sources */,
 				ABC42ED32AB9964900A9E080 /* Task.swift in Sources */,
+				ABFDB6F72AC1AD2C0049A539 /* TaskViewController.swift in Sources */,
 				AB406A432A8CDEA900DD5F95 /* LoginViewModel.swift in Sources */,
 				ABB24EA92A8B8C170029BA59 /* AppDelegate.swift in Sources */,
 				ABF9598C2AB84BC400AAC2B6 /* TaskCell.swift in Sources */,
@@ -283,6 +286,7 @@
 				ABE7446B2AA72C93008D3AF6 /* ProfileViewController.swift in Sources */,
 				AB406A412A8CD1F100DD5F95 /* CustomTextField.swift in Sources */,
 				AB7BDFCD2AA5E9A300CCA0CC /* MainTabBarViewController.swift in Sources */,
+				ABB1F4152AC1ABBB00A3446C /* PastTaskCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

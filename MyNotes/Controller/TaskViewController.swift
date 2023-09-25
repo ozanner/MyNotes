@@ -1,58 +1,48 @@
 //
-//  TasksViewController.swift
+//  TaskViewController.swift
 //  MyNotes
 //
-//  Created by ozan on 5.09.2023.
+//  Created by ozan on 25.09.2023.
 //
 
 import UIKit
 import FirebaseAuth
-private let reuseIdentifier = "Tasks"
-
+private let reuseIdentifier = "TasksCell"
 class TasksViewController: UIViewController {
     // MARK: - Properties
-     var user: User? {
+    var user: User?{
         didSet{ configure() }
     }
     private var tasks = [Task]()
-    
     private lazy var newTaskButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+        button.setImage(UIImage(systemName: "plus.diamond.fill"), for: .normal)
         button.contentHorizontalAlignment = .fill
         button.contentVerticalAlignment = .fill
         button.tintColor = .white
         button.addTarget(self, action: #selector(handleNewTaskButton), for: .touchUpInside)
         return button
     }()
-    
     private let collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         return collectionView
     }()
-    
-    private let nameLabel: UILabel = {
+    private let nameLabel:UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         label.textColor = .white
         label.text = " "
         return label
     }()
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         layout()
-        //fetchUser()
-        //fetchTasks()
     }
 }
-
 // MARK: - Service
 extension TasksViewController{
-    
-    //tasklerin getirilip ön yüzde göstermeyi sağlayan fonksiyon
     private func fetchTasks(){
         guard let uid = self.user?.uid else { return }
         Service.fetchTasks(uid: uid) { tasks in
@@ -60,39 +50,31 @@ extension TasksViewController{
             self.collectionView.reloadData()
         }
     }
-    
-   
 }
-
 // MARK: - Selector
-
 extension TasksViewController{
-    @objc private func handleNewTaskButton(_ sender: UIButton) {
-        //print("add new task")
+    @objc private func handleNewTaskButton(_ sender: UIButton){
         let controller = NewTaskViewController()
-        if let sheet = controller.sheetPresentationController {
+        if let sheet = controller.sheetPresentationController{
             sheet.detents = [.medium()]
         }
         self.present(controller, animated: true)
     }
 }
-
 // MARK: - Helpers
-
 extension TasksViewController{
-    private func style() {
+    private func style(){
         backgroundGradientColor()
-        self.navigationController?.navigationBar.isHidden = true // navigasyon barı gizledik
+        self.navigationController?.navigationBar.isHidden = true
         newTaskButton.translatesAutoresizingMaskIntoConstraints = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(TaskCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.translatesAutoresizingMaskIntoConstraints =  false
     }
-    
-    private func layout() {
+    private func layout(){
         view.addSubview(collectionView)
         view.addSubview(newTaskButton)
         view.addSubview(nameLabel)
@@ -109,37 +91,29 @@ extension TasksViewController{
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
             view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 14)
-            
         ])
-        
     }
-    private func configure() {
+    private func configure(){
         guard let user = self.user else { return }
         nameLabel.text = "Hi \(user.name) 👋🏻"
-        //print("user: \(user.name)")
         fetchTasks()
     }
 }
-
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-extension TasksViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+// MARK: - UICollectionViewDelegate ,UICollectionViewDataSource
+extension TasksViewController: UICollectionViewDelegate ,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tasks.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TaskCell
         cell.task = tasks[indexPath.row]
         cell.index = indexPath.row
-        cell.delegete = self
+        cell.delegate = self
         return cell
     }
-    
-    
 }
-
-
-extension TasksViewController: UICollectionViewDelegateFlowLayout { // collectin view tasarımı nasık olucağını ayarlıyoruz
+extension TasksViewController: UICollectionViewDelegateFlowLayout{
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cell = TaskCell(frame: .init(x: 0, y: 0, width: view.frame.width * 0.9, height: 50))
         cell.task = tasks[indexPath.row]
@@ -151,15 +125,12 @@ extension TasksViewController: UICollectionViewDelegateFlowLayout { // collectin
         return .init(width: 10, height: 10)
     }
 }
-
 // MARK: - TaskCellProtocol
-extension TasksViewController: TaskCellProtocol {
+extension TasksViewController: TaskCellProtocol{
     func deleteTask(sender: TaskCell, index: Int) {
+        sender.reload()
         self.tasks.remove(at: index)
         self.collectionView.reloadData()
     }
     
-    
 }
-
-

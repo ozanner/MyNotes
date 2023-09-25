@@ -1,72 +1,43 @@
 //
-//  TasksCell.swift
+//  PastTaskCell.swift
 //  MyNotes
 //
-//  Created by ozan on 18.09.2023.
+//  Created by ozan on 25.09.2023.
 //
 
 import UIKit
-protocol TaskCellProtocol: AnyObject {
-    func deleteTask(sender: TaskCell,index: Int)
-}
-class TaskCell: UICollectionViewCell {
+class PastTaskCell: UICollectionViewCell {
     // MARK: - Properties
-    var index: Int?
     var task: Task?{
         didSet{ configure() }
     }
-    weak var delegate: TaskCellProtocol?
     private lazy var circleButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "circle"), for: .normal)
-        button.tintColor = .mainColor
-        button.addTarget(self, action: #selector(handleCircleButton), for: .touchUpInside)
+        button.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+        button.tintColor = .lightGray
         return button
     }()
     private let taskLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .title3)
         label.numberOfLines = 0
+        label.textColor = .lightGray
         return label
     }()
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        reload()
+        style()
+        layout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-     func reload(){
-        style()
-        layout()
-    }
-}
-// MARK: - Selector
-extension TaskCell{
-    @objc private func handleCircleButton(_ sender: UIButton){
-        UIView.animate(withDuration: 0.5, delay: 0) {
-            self.circleButton.alpha = 0
-        } completion: { _ in
-            UIView.animate(withDuration: 0.5, delay: 0) {
-                self.circleButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
-                self.circleButton.alpha = 1
-            } completion: { _ in
-                guard let task = self.task else { return }
-                guard let index = self.index else{ return }
-                Service.deleteTask(task: task)
-                self.delegate?.deleteTask(sender: self, index: index)
-            }
-            
-        }
-        
-    }
 }
 // MARK: - Helpers
-extension TaskCell{
+extension PastTaskCell{
     private func style(){
-        circleButton.setImage(UIImage(systemName: "circle"), for: .normal)
         backgroundColor = .white
         layer.cornerRadius = 5
         layer.shadowColor = UIColor.black.withAlphaComponent(0.6).cgColor
